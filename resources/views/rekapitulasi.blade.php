@@ -15,7 +15,7 @@
                     <td>Keterangan</td>
                     <td>Masuk</td>
                     <td>Keluar</td>
-                    <td>Aksi</td>
+                    <td>Jenis</td>
                 </tr>
                 <?php $no = 1; ?>
                 @foreach($kas as $k)
@@ -32,6 +32,8 @@
                         <?php
                         if ($k->type_kas == 'masuk') {
                             echo $k->jumlah;
+                        } else {
+                            echo 0;
                         }
                         ?>
                     </td>
@@ -39,13 +41,20 @@
                         <?php
                         if ($k->type_kas == 'keluar') {
                             echo $k->jumlah;
+                        } else {
+                            echo 0;
                         }
                         ?>
                     </td>
                     <td>
-                        <a href="{{ route('kas-edit', ['id' => $k->id ] ) }}"> <button class="btn btn-warning">Edit</button></a>
-                        <a href="{{ route('kas-hapus', ['id' => $k->id ] ) }}"> <button class="btn btn-danger">Hapus</button></a>
 
+                        <?php
+                        if ($k->type_kas == 'masuk') {
+                            echo "<button class='btn btn-success'>Masuk</button> ";
+                        } else {
+                            echo "<button class='btn btn-danger'>Keluar</button> ";
+                        }
+                        ?>
                     </td>
                 </tr>
 
