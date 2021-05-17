@@ -60,15 +60,15 @@
 
                 @endforeach
                 <tr>
-                    <td colspan="2">Total Kas Masuk</td>
-                    <td colspan="4">{{$totalMasuk}}</td>
+                    <td colspan="4">Total Kas Masuk</td>
+                    <td colspan="3">{{$totalMasuk}}</td>
                 </tr>
                 <tr>
-                    <td colspan="2">Total Kas Keluar</td>
-                    <td colspan="4">{{$totalKeluar}}</td>
+                    <td colspan="5">Total Kas Keluar</td>
+                    <td colspan="2">{{$totalKeluar}}</td>
                 </tr>
                 <tr>
-                    <td colspan="2">Saldo</td>
+                    <td colspan="3">Saldo</td>
                     <td colspan="4">{{$saldo}}</td>
                 </tr>
 
