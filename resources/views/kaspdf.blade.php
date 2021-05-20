@@ -62,3 +62,23 @@
         <td colspan="4">{{$saldo}}</td>
     </tr>
 </table>
+
+<table width="100%">
+    <tr>
+        <td width="30%"></td>
+        <td width="30%"></td>
+        <td width="30%">
+            <center>
+                Karawang, <?php echo date("d M Y"); ?>
+                <br>Pemimpin
+                <br>CV. KARUNIA METAL SEJAHTERA
+                <br>
+                <br>
+                <br>
+                Hari Suryanto<br>
+                Owner
+            </center>
+
+        </td>
+    </tr>
+</table>
