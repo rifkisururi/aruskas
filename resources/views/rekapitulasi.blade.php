@@ -7,6 +7,7 @@
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <div class="card-body">
         <div class="table-responsive">
+            <a href="{{ route('export') }}"> <button class="btn btn-primary">Export Data</button></a>
             <table class="table table-bordered table-striped" id="dataTable" width="100%" cellspacing="0">
                 <tr>
                     <td>No</td>

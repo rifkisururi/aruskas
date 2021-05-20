@@ -26,7 +26,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: pink ;">
+        <ul class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar" style="background-color: #6699FF ;">
 
             <!-- Sidebar - Brand -->
 
@@ -53,23 +53,23 @@
             <li class="nav-item">
 
                 <a class="nav-link" href="{{ route('kas', ['type' => 'masuk'] ) }}">
-                    <i class="fas fa-fw fa-home"></i>
+                    <i class="fa fa-arrow-up"></i>
                     <span>Kas Masuk </span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('kas', ['type' => 'keluar'] ) }}">
-                    <i class="fas fa-fw fa-home"></i>
+                    <i class="fa fa-arrow-down" aria-hidden="true"></i>
                     <span>Kas Keluar</span></a>
             </li>
 
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('kas-rekapitulasi') }}">
-                    <i class="fas fa-fw fa-home"></i>
+                    <i class="fas fa-book-open"></i>
                     <span>Rekapitulasi Kas</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('kas-grafik', ['year' => '2021']) }}">
-                    <i class="fas fa-fw fa-home"></i>
+                    <i class="fas fa-chart-bar"></i>
                     <span>Grafik</span></a>
             </li>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\kas_model;
+use PDF;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -317,5 +318,24 @@ class HomeController extends Controller
             'm11' => $m11,
             'm12' => $m12,
         ]);
+    }
+
+    public function export()
+    {
+        $kas = DB::table('kas')
+            ->select('id', 'kode', 'tanggal', 'keterangan', 'jumlah', 'type_kas')
+            ->get();
+        $totalMasuk = DB::table("kas")->where('type_kas', '=', 'masuk')->get()->sum("jumlah");
+        $totalKeluar = DB::table("kas")->where('type_kas', '=', 'keluar')->get()->sum("jumlah");
+        $saldo = $totalMasuk - $totalKeluar;
+
+        $pdf = PDF::loadview('kaspdf', [
+            'kas' => $kas, 'totalMasuk' => $totalMasuk,
+            'totalKeluar' => $totalKeluar,
+            'saldo' => $saldo
+        ])->setPaper('A4', 'potrait');
+        return $pdf->stream();
+        //$pdf = PDF::loadview('kaspdf', ['kaspdf' => $kas]);
+        //return $pdf->download('kaspdf');
     }
 }

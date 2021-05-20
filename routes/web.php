@@ -29,3 +29,5 @@ Route::POST('/kas/{type}', [App\Http\Controllers\HomeController::class, 'store']
 
 Route::get('/rekapitulasi', [App\Http\Controllers\HomeController::class, 'rekapitulasi'])->name('kas-rekapitulasi');
 Route::get('/grafik/{year}', [App\Http\Controllers\HomeController::class, 'grafik'])->name('kas-grafik');
+
+Route::get('/export', [App\Http\Controllers\HomeController::class, 'export'])->name('export');

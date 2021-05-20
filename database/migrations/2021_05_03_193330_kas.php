@@ -32,5 +32,6 @@ class Kas extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('kas');
     }
 }
